@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecoar Coletivo: Humanidade e Ação Conjunta</title>
+    
+    <style>
+        /* Reset e Acessibilidade */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif; /* Nova tipografia para um ar mais humano e editorial */
+            line-height: 1.7;
+            color: #4a3728; /* Marrom escuro caloroso em vez de cinza/preto */
+            background-color: #fdfaf6; /* Fundo areia suave */
+            padding: 25px;
+        }
+
+        /* Alteração 2: Nova identidade visual baseada em CSS Grid */
+        .grid-container {
+            max-width: 1140px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2.8fr 1.2fr;
+            gap: 30px;
+        }
+
+        /* Header Customizado */
+        header {
+            grid-column: 1 / -1;
+            background-color: #d4a373; /* Tom terracota/pastoril quente */
+            color: #ffffff;
+            padding: 50px 30px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(212, 163, 115, 0.2);
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 12px;
+            letter-spacing: -1px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            font-style: italic;
+        }
+
+        /* Nav Customizado */
+        nav {
+            grid-column: 1 / -1;
+            background-color: #faedcd; /* Creme suave */
+            border-radius: 8px;
+            padding: 12px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        /* Alteração 6: Links totalmente personalizados */
+        nav a {
+            color: #606c38; /* Verde sálvia escuro */
+            text-decoration: none;
+            font-weight: bold;
+            font-family: sans-serif;
+            font-size: 0.95rem;
+            padding: 8px 20px;
+            transition: all 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+
+        nav a:hover {
+            color: #283618;
+            border-bottom: 2px solid #606c38;
+        }
+
+        /* Conteúdo Principal */
+        main {
+            grid-column: 1 / 2;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        section {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+        }
+
+        section h2 {
+            color: #283618;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #faedcd;
+            padding-bottom: 10px;
+        }
+
+        /* Alteração 7: Reorganização interna usando DIVs para criar blocos informativos adicionais */
+        .info-card-container {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .info-card {
+            flex: 1;
+            background-color: #fefae0;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            border-left: 4px solid #d4a373;
+        }
+
+        article {
+            background-color: #fcf8f2;
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid #faedcd;
+        }
+
+        article h3 {
+            color: #606c38;
+            margin-bottom: 12px;
+            font-size: 1.4rem;
+        }
+
+        /* Aside Customizado */
+        aside {
+            grid-column: 2 / 3;
+            background-color: #e6eccd; /* Verde sálvia muito claro e relaxante */
+            padding: 30px;
+            border-radius: 12px;
+            height: fit-content;
+        }
+
+        aside h3 {
+            color: #283618;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .block-quote {
+            font-family: sans-serif;
+            font-size: 1.1rem;
+            line-height: 1.5;
+            color: #606c38;
+            margin: 20px 0;
+            position: relative;
+            padding-left: 15px;
+            border-left: 3px solid #606c38;
+        }
+
+        /* Alteração 5 e 6: Customização de Listas e Links do Aside */
+        aside ul {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        aside li {
+            margin-bottom: 12px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        aside li::before {
+            content: "•";
+            color: #d4a373;
+            font-weight: bold;
+            font-size: 1.2rem;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
+        aside a {
+            color: #606c38;
+            text-decoration: none;
+            font-weight: bold;
+            font-family: sans-serif;
+            font-size: 0.9rem;
+        }
+
+        aside a:hover {
+            color: #d4a373;
+            text-decoration: underline;
+        }
+
+        /* Footer Customizado */
+        footer {
+            grid-column: 1 / -1;
+            background-color: #283618;
+            color: #fefae0;
+            text-align: center;
+            padding: 25px;
+            border-radius: 12px;
+            font-family: sans-serif;
+            font-size: 0.85rem;
+        }
+
+        /* Responsividade */
+        @media (max-width: 800px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+            main, aside {
+                grid-column: 1 / -1;
+            }
+            .info-card-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="grid-container">
+
+        <header>
+            <h1>Ecoar Coletivo</h1>
+            <p>Sintonizando batimentos através do diálogo e construindo pontes pelo esforço mútuo.</p>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#empatia">Nossa Filosofia</a></li>
+                <li><a href="#cooperacao">Ações Práticas</a></li>
+                <li><a href="#comunidade">Rede de Apoio</a></li>
+                <li><a href="#contato">Fale Conosco</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <section id="empatia">
+                <h2>O Despertar da Empatia</h2>
+                <p>Muito além de sentir o que o outro sente, a empatia cognitiva envolve o esforço consciente de decifrar a bagagem cultural, histórica e emocional de quem está à nossa frente, suspendendo qualquer julgamento prévio.</p>
+                
+                <div class="info-card-container">
+                    <div class="info-card">
+                        <strong>Fato Prático:</strong> Praticar a Comunicação Não-Violenta (CNV) é o primeiro passo para validar o sentimento alheio sem reações defensivas.
+                    </div>
+                    <div class="info-card">
+                        <strong>No Cotidiano:</strong> Perguntar "Como você está lidando com isso?" em vez de apenas dar conselhos automáticos.
+                    </div>
+                </div>
+
+                <article>
+                    <h3>A Perspectiva do Outro no Dia a Dia</h3>
+                    <p>No ambiente escolar ou profissional, a falta de empatia gera barreiras invisíveis. Quando escolhemos validar a vulnerabilidade de um colega em vez de apontar falhas, criamos um ambiente seguro para o desenvolvimento pessoal e coletivo de todos os envolvidos.</p>
+                </article>
+            </section>
+
+            <section id="cooperacao">
+                <h2>Tecendo a Cooperação</h2>
+                <p>Diferente da competição, que isola os indivíduos em busca de um pódio único, a cooperação redistribui o peso dos desafios, entendendo que o sucesso coletivo serve de base estável para todas as conquistas individuais.</p>
+                
+                <article>
+                    <h3>Inteligência Coletiva em Ação</h3>
+                    <p>Mapear as habilidades de cada membro de uma equipe maximiza o potencial do grupo. Enquanto alguém lidera a organização técnica, outro pode trazer o equilíbrio emocional ou a criatividade conceitual. A verdadeira colaboração valoriza e utiliza essas diferenças de forma estratégica.</p>
+                </article>
+            </section>
+        </main>
+
+        <aside>
+            <h3>Espaço de Inspiração</h3>
+            <div class="block-quote">
+                "Nenhum de nós é tão inteligente quanto todos nós juntos."
+            </div>
+            
+            <h3>Estudos e Guias</h3>
+            <ul>
+                <li><a href="#">Manual Prático de CNV</a></li>
+                <li><a href="#">Economia Solidária e Colaborativa</a></li>
+                <li><a href="#">Dinâmicas de Grupos Inclusivos</a></li>
+                <li><a href="#">O Impacto do Voluntariado Jovem</a></li>
+            </ul>
+        </aside>
+
+        <footer>
+            <p>&copy; 2026 Espaço Ecoar Coletivo - Cultivando a conexão humana através do design consciente.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
